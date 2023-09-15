@@ -18,18 +18,20 @@
 
 ## Definição do problema problema
 
-O problema com o gerenciamento atual da biblioteca de uma pequena escola é que ele não é eficiente. O sistema atual é baseado em planilhas e e-mails, o que torna difícil acompanhar os livros e outros materiais. Isso pode levar a problemas como livros perdidos ou danificados, multas não pagas e alunos que não conseguem encontrar os livros que precisam.
+- Quem é o cliente?
+    Como potenciais clientes deste projeto destacam se profissionais da área médica, psicologia, Terapia Ocupacional, Fonoaudiologia, dentre outras áreas onde são realizadas estudos relacionados a pacientes pertencentes ao espectro autista
 
-Uma solução que foi encontrada para esse problema é criar um sistema web. Esse sistema permitiria aos alunos e professores pesquisar livros, verificar livros, pagar multas e muito mais. O sistema também poderia ser usado para gerar relatórios sobre o uso da biblioteca, o que ajudaria a escola a tomar decisões sobre quais livros comprar e como alocar recursos.
+- Quais os problemas ou oportunidades temos para resolver?
+    Devido a falta de informações sistematizadas, os profissionais de área da saúde que cuidam de pacientes do TEA tem dificuldades de classificar seus pacientes incorrendo geralmente em ponderações arbitrárias para tal clusterização, o que é sabido ser algo plenamente impreciso. Pleiteiase criar um modelo de Machine Learning onde será utilizado o algoritmo não supervisionados chamado Custering . É fruto ainda deste trabalho criar, parametrizar, e executar este algoritmo na linguagem R.
 
-O sistema web, seria uma solução eficiente para o problema. O sistema seria fácil de usar e manter, e ajudaria a escola a economizar tempo e dinheiro.
+- Qual o benefício claro que o cliente pode ter?
+    É muito comum analisarmos observações dentro de um contexto (ou grupo) afim de identificarmos padrões de comportamentos dos registros observados. Na área médica, não é diferente. Hoje, médicos e demais profissionais da área da saúde agrupam pacientem com base em seu conhecimento e observações subjacentes, mas diante de dezenas (ou até centenas) de variáveis de uma paciente, é inevitável que ocorre ponderação arbitrária atribuindo valores de forma empírica (consequentemente não científica) na separação de pacientes em grupos afim de poder estudar estes pacientes sob a ótica do grupo onde está inserido. Espera se que com o resultado apresentado por este algoritmo, os profissionais da saúde tenham mais precisão ao analisar possíveis grupos de indivíduos visto que estes grupos (clusters) emergirão fruto deste poderoso algorítimo de Machine Learning, o Clustering
 
-Aqui estão algumas das vantagens de usar um sistema web, para gerenciar uma biblioteca escolar:
+- Como será a experiência do cliente nesse novo serviço?
 
-- O sistema será fácil de usar e manter.
-- O sistema ajudará a escola a economizar tempo e dinheiro.
-- O sistema permitirá aos alunos e professores pesquisar livros, verificar livros, pagar multas e muito mais.
-- O sistema poderá ser usado para gerar relatórios sobre o uso da biblioteca, o que ajudaria a escola a tomar decisões sobre quais livros comprar e como alocar recursos.
+    Em um primeiro momento, como fruto deste trabalho, serão ofertados aos clientes da área de saúde uma relação de grupos com seus respectivos pacientes oriundos da clusterização do algoritmo de Clustering sem que haja quaisquer ponderações arbitrárias. O número de grupos poderá ser definido pelo cliente / restrição do problema de negócio ( k means method ), ou ser “sugerido” pelo método Hierarchical Cluster Analysis . O cliente participará desta decisão pois a escolha do método influenciará diretamente o resultado. Posteriormente, pode se avaliar a criação de uma interface a nível de usuário para coleta das informações de cada paciente, mas como fruto deste projeto sugiro foco na parte de DataScience (Machine Learning) sendo disponibilizado uma tela desenvolvida em Python onde o cliente escolherá o dataset bem como dará start no modelo.
+
+
 
 ## 4C's
 
@@ -76,51 +78,45 @@ Aqui estão algumas das vantagens de usar um sistema web, para gerenciar uma bib
 
 ### 4. Código (Code)
 
-- **Estrutura de Pacotes:**
-  - `lib_manager`
-    - `models\auth`: Contém classes relacionadas à autenticação.
-    - `models\research`: Contém classes relacionadas à pesquisa de livros.
-    - `models\loan`: Contém classes relacionadas ao empréstimo de livros.
-    - `models\return`: Contém classes relacionadas à devolução de livros.
-    - `models\books`: Contém classes de modelo para representar livros, autores, usuários, etc.
-    - `dbConfig`: Contém classes para acesso ao banco de dados.
+- **Bibliotecas Utilizadas:**
+
+  - R
+    - library tidyverse
+    - library (cluster) 
+    - library dendextend
+    - library factoextra
+    - library fpc
+    - library gridExtra
+    - library readxl
+    - library reshape
+    - library dplyr
+
+  - PYTHON
+    - pandas
+    - django
 
 ---
 
 ## Requisitos
 
-- **Cadastro de Livros:**
-  - Cadastro de informações dos livros, incluindo título, autor, editora, ISBN, ano de publicação, número de exemplares, etc.
+- **Selecionar Dataset:**
+  - Selecionar localmente arquivo de excel contendo dataset.
 
-- **Cadastro de Usuários:**
-  - Cadastro de alunos, professores e funcionários com informações pessoais, número de identificação, etc.
+- **Selecionar Método de Cálculo:**
+  - Selecionar método de cálculo, sendo as opções:Euclidean Distance , Minkowski distance , Chebychev distance, Canberra distance ou Manhattan distance..
 
-- **Controle de Empréstimos e Devoluções:**
-  - Registro de empréstimos de livros para usuários.
-  - Data de empréstimo e data de devolução prevista.
-  - Geração de recibos de empréstimos.
+  - **Selecionar Método de Encadeamento:**
+  - Escolher qual o método de encadeamento do algorítimo, sendo as opções : Complete Linkage , Single Linkage Centroid Method.
 
-- **Pesquisa e Catálogo:**
-  - Sistema de pesquisa que permite aos usuários buscar livros por título, autor, categoria, ISBN, etc.
-  - Exibição de informações detalhadas do livro, incluindo disponibilidade.
+  - **Selecionar Número de Clusters:**
+  - Escolher número de clusters.
 
-- **Reservas de Livros:**
-  - Capacidade de reservar livros que estão atualmente emprestados.
+  - **Executar o Algorítimo:**
+  - Executar o Algorítimo.
 
-- **Relatórios e Estatísticas:**
-  - Geração de relatórios sobre o uso da biblioteca, como livros mais emprestados, frequência de empréstimos, etc.
+  - **Exportar Resultado:**
+  - Exportar o Resultado.
 
-- **Gerenciamento de Estoque:**
-  - Controle de estoque de livros, incluindo adição, remoção e atualização de exemplares.
-
-- **Segurança e Autenticação:**
-  - Segurança para proteger informações sensíveis dos usuários e garantir que apenas pessoal autorizado tenha acesso ao sistema.
-
-- **Backup e Recuperação de Dados:**
-  - Implementação de rotinas de backup para proteger os dados da biblioteca.
-
-- **Suporte Técnico e Treinamento:**
-  - Fornecimento de suporte técnico e treinamento para a equipe da biblioteca.
 
 ## Caso de Uso
 
@@ -138,14 +134,13 @@ Aqui estão algumas das vantagens de usar um sistema web, para gerenciar uma bib
    - **Ator:** Médico
    - **Descrição:** O usuário poderá selecionar um dataset em format xlsx para executar o algorítimo de Clustering.
 
-2. **Selecionar Método de Cálculo :**
+2. **Selecionar Método de Cálculo:**
    - **Ator:** Médico
-   - **Descrição:** O usuário poderá selecionar o método de cálculo que o algorítimo utilizará, sendo as opções:Euclidean Distance , Minkowski distance , Chebychev distance, Canberra distance ou Manhattan distance.
+   - **Descrição:** O usuário poderá selecionar o método de cálculo que o algorítimo utilizará
 
 3. **Selecionar Método de Encadeamento:**
    - **Ator:** Médico
-   - **Descrição:** O usuário poderá escolher qual o método de encadeamento do algorítimo, sendo as opções : Complete
-Linkage , Single Linkage Centroid Method.
+   - **Descrição:** O usuário poderá escolher qual o método de encadeamento.
 
 4. **Selecionar Número de Clusters:**
    - **Ator:** Médico
