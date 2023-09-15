@@ -124,49 +124,41 @@ Aqui estão algumas das vantagens de usar um sistema web, para gerenciar uma bib
 
 ## Caso de Uso
 
-![Caso de Uso](Diagrama Casos de Uso.pdf)
+![Caso de Uso](Diagrama Casos de Uso.png)
 
 ### **Atores:**
 
-1. **Usuário (Aluno/Professor/Funcionário):** Pessoas que utilizam o sistema para buscar, reservar e emprestar livros.
-
-2. **Bibliotecário:** Responsável pela administração do sistema, incluindo cadastro de livros, gerenciamento de empréstimos, devoluções e geração de relatórios.
+1. **Médicos:** Serão os únicos atores da aplicação.
 
 ---
 
 ### **Casos de Uso:**
 
-1. **Pesquisar Livros:**
-   - **Ator Principal:** Usuário
-   - **Descrição:** O usuário pode pesquisar livros no catálogo da biblioteca com base em critérios como título, autor, categoria, ISBN, etc.
+1. **Selecionar Dataset:**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá selecionar um dataset em format xlsx para executar o algorítimo de Clustering.
 
-2. **Realizar Empréstimo:**
-   - **Ator Principal:** Usuário
-   - **Descrição:** O usuário pode solicitar empréstimo de livros disponíveis na biblioteca. O sistema registra o empréstimo e gera um recibo.
+2. **Selecionar Método de Cálculo :**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá selecionar o método de cálculo que o algorítimo utilizará, sendo as opções:Euclidean Distance , Minkowski distance , Chebychev distance, Canberra distance ou Manhattan distance.
 
-3. **Realizar Devolução:**
-   - **Ator Principal:** Usuário
-   - **Descrição:** O usuário pode devolver os livros emprestados. O sistema atualiza o status do livro e calcula multas, se aplicável.
+3. **Selecionar Método de Encadeamento:**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá escolher qual o método de encadeamento do algorítimo, sendo as opções : Complete
+Linkage , Single Linkage Centroid Method.
 
-4. **Reservar Livro:**
-   - **Ator Principal:** Usuário
-   - **Descrição:** O usuário pode reservar um livro que está atualmente emprestado por outro usuário. O sistema notifica o usuário quando o livro estiver disponível.
+4. **Selecionar Número de Clusters:**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá escolher qual o número de clusters no K-Means.
 
-5. **Cadastrar Livro:**
-   - **Ator Principal:** Bibliotecário
-   - **Descrição:** O bibliotecário pode cadastrar novos livros no sistema, incluindo informações como título, autor, ISBN, etc.
+5. **Executar o Algorítimo:**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá executar o algorítimo de ML.
 
-6. **Gerar Relatórios:**
-   - **Ator Principal:** Bibliotecário
-   - **Descrição:** O bibliotecário pode gerar relatórios sobre o uso da biblioteca, como os livros mais emprestados, frequência de empréstimos, multas, etc.
+6. **Exportar o Resultado:**
+   - **Ator:** Médico
+   - **Descrição:** O usuário poderá explortar o resultado em formato excel.
 
-7. **Configurar Sistema:**
-   - **Ator Principal:** Bibliotecário
-   - **Descrição:** O bibliotecário pode personalizar as configurações do sistema, como prazos de empréstimo, políticas de multas, etc.
-
-8. **Autenticar Usuário:**
-   - **Ator Principal:** Sistema
-   - **Descrição:** O sistema autentica os usuários (alunos, professores, funcionários) para acessar funcionalidades restritas.
 
 ## Quadro Kambam
 
