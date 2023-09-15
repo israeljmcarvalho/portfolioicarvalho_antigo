@@ -1,8 +1,8 @@
-# LibManager
+# DOCUMENTAÇÃO
 
 ## Indice
 
-- [LibManager](#libmanager)
+- [Sumário](#Sumário)
   - [Indice](#indice)
   - [Definição do problema problema](#definição-do-problema-problema)
   - [4C's](#4cs)
@@ -37,11 +37,11 @@
 
 ### 1. Contexto (Context)
 
-![Contexto e Container](assets/images/Contexto.svg)
+![Contexto e Container](Contexto.png)
 
-- **Nome:** LibManager
-- **Objetivo:** Fornecer uma solução para gerenciar a coleção de livros de uma biblioteca escolar.
-- **Stakeholders:** Bibliotecários, usuários da biblioteca.
+- **Nome:** ClusteringAlgorithm
+- **Objetivo:** Executar clusterização de pacientes dentro do spectro autista de forma sem utilização de ponderação arbitrária.
+- **Stakeholders:** Médicos
 
 ---
 
@@ -49,34 +49,30 @@
 
 ![Contexto e Container](assets/images/Container.svg)
 
-- **Nome:** Aplicação da Biblioteca
-  - **Tecnologias:** Programação web: JavaScript (Node.js);
+- **Nome:** Algorítimo Clustering
+  - **Tecnologias:** Script Machine Learning: (R Language);
 
-  - **Responsabilidade:** Interface com o usuário, gerenciamento de pedidos, pesquisa de livros.
-
-- **Nome:** Banco de Dados
-  - **Tecnologia:** Banco de Dados MongoDB
-  - **Responsabilidade:** Armazenamento de informações sobre livros, autores, usuários e transações.
+  - **Responsabilidade:** Executar o algorítimo Clustering.
 
 ---
 
 ### 3. Componente (Component)
 
-- **Nome:** Módulo de Autenticação
-  - **Responsabilidade:** Gerenciar autenticação de usuários (login/logout).
+- **Nome:** Módulo Seleção Dataset
+  - **Responsabilidade:** Habilitar a seleção de dataset local.
 
-- **Nome:** Módulo de Pesquisa
-  - **Responsabilidade:** Permitir aos usuários pesquisar livros por título, autor, gênero.
+- **Nome:** Módulo de Parametrizações
+  - **Responsabilidade:** Permitir realizar as parametrizações do algorítimo.
 
-- **Nome:** Módulo de Empréstimo
-  - **Responsabilidade:** Permitir aos usuários solicitar empréstimo de livros.
+- **Nome:** Módulo de Execução
+  - **Responsabilidade:** Evocar o algorítimo.
 
-- **Nome:** Módulo de Devolução
-  - **Responsabilidade:** Gerenciar a devolução de livros emprestados.
+- **Nome:** Módulo Exportar Resultados
+  - **Responsabilidade:** Exportar o resultado para arquivos xlsx.
 
 ---
 
-### 4. Código (Code)
+### 4. Código (lib)
 
 - **Bibliotecas Utilizadas:**
 
@@ -109,13 +105,13 @@
   - Escolher qual o método de encadeamento do algorítimo, sendo as opções : Complete Linkage , Single Linkage Centroid Method.
 
   - **Selecionar Número de Clusters:**
-  - Escolher número de clusters.
+  - Escolher número de clusters a ser utilizados pelo algorítimos k-means.
 
   - **Executar o Algorítimo:**
   - Executar o Algorítimo.
 
   - **Exportar Resultado:**
-  - Exportar o Resultado.
+  - Exportar o Resultado em formato de planilha eletrônica xlsx.
 
 
 ## Caso de Uso
