@@ -43,7 +43,7 @@ Dim sRemote, sBranch
 	sScriptdir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
 	sCommit = "Update - " & FormatDateTime(Now, vbGeneralDate)
   sRemote = "origin"
-  sBranch = "master"
+  sBranch = "main"
 	bolBashScriptPause = True
 	Call GitPush_Lib (sSOUser, sScriptdir, sCommit, sRemote, sBranch, bolBashScriptPause)
 
