@@ -18,6 +18,7 @@
 
 ## Definição do problema problema
 
+
 - Quem é o cliente?
     Como potenciais clientes deste projeto destacam se profissionais da área médica, psicologia, Terapia Ocupacional, Fonoaudiologia, dentre outras áreas onde são realizadas estudos relacionados a pacientes pertencentes ao espectro autista
 
