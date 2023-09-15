@@ -48,7 +48,7 @@
 
 ### 2. Container (Contêiner)
 
-![Contexto e Container](assets/images/Container.svg)
+![Contexto e Container](Container.png)
 
 - **Nome:** Algorítimo Clustering
   - **Tecnologias:** Script Machine Learning: (R Language);
