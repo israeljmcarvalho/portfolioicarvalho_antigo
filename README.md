@@ -124,7 +124,7 @@ Aqui estão algumas das vantagens de usar um sistema web, para gerenciar uma bib
 
 ## Caso de Uso
 
-![Caso de Uso](Diagrama Casos de Uso.png)
+![Caso de Uso](DiagramaCasosdeUso.png)
 
 ### **Atores:**
 
